@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 - Interactive Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="shell">
+        <section class="card">
+            <h1>Interactive Feedback Form</h1>
+            <p>Validation on keypress, hover effects, and double-click submit confirmation.</p>
+
+            <form id="feedbackForm" novalidate>
+                <div class="field interactive-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name">
+                    <small id="nameError" class="error"></small>
+                </div>
+
+                <div class="field interactive-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email">
+                    <small id="emailError" class="error"></small>
+                </div>
+
+                <div class="field interactive-field">
+                    <label for="department">Department</label>
+                    <select id="department" name="department">
+                        <option value="">Select Department</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                    </select>
+                    <small id="departmentError" class="error"></small>
+                </div>
+
+                <div class="field interactive-field">
+                    <label for="message">Feedback</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <small id="messageError" class="error"></small>
+                </div>
+
+                <button id="submitBtn" type="button" title="Double-click to submit">Double-Click Submit</button>
+            </form>
+
+            <p id="statusMessage" class="status"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
