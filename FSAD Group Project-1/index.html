@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏨 Hotel Booking System</h1>
+            <p>Find and book your perfect hotel</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-form">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" placeholder="Enter city name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkIn">Check-in Date</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check-out Date</label>
+                    <input type="date" id="checkOut" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" min="1" max="10" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="rooms">Number of Rooms</label>
+                    <input type="number" id="rooms" min="1" max="5" value="1" required>
+                </div>
+
+                <button class="search-btn" onclick="searchHotels()">Search Hotels</button>
+            </div>
+        </section>
+
+        <!-- Hotels Display Section -->
+        <section class="hotels-section">
+            <div id="hotelsContainer" class="hotels-grid">
+                <!-- Hotels will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Booking Modal -->
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeBooking()">&times;</span>
+                <h2>Complete Your Booking</h2>
+                
+                <div id="hotelDetails" class="hotel-details">
+                    <!-- Hotel details will be populated here -->
+                </div>
+
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roomType">Room Type</label>
+                        <select id="roomType" required>
+                            <option value="">Select a room type</option>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+
+                    <div id="priceDetails" class="price-details">
+                        <!-- Price will be calculated here -->
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Booking Confirmation -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content confirmation">
+                <h2>✓ Booking Confirmed!</h2>
+                <div id="confirmationDetails">
+                    <!-- Confirmation details will be displayed here -->
+                </div>
+                <button class="close-btn" onclick="closeConfirmation()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
